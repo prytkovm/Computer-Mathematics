@@ -85,7 +85,7 @@ mpz_class newton_sqrt(const mpz_class& val)
     while (true)
     {
         x_i = (x_0 + val / x_0) >> 1;
-        if (x_0 == x_i || x_i > x_0 && decrease_flag)
+        if (x_i >= x_0 && decrease_flag)
             break;
         decrease_flag = (x_i < x_0);
         x_0 = x_i;
